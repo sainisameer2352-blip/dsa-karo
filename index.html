@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSA Karo, Placement Nikalo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🚀 DSA Karo, Placement Nikalo</div>
+    <button id="themeBtn" class="icon-btn">🌙</button>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <button class="nav active" data-section="dashboard">🏠 Dashboard</button>
+      <button class="nav" data-section="practice">💻 Practice</button>
+      <button class="nav" data-section="topics">📚 DSA Topics</button>
+      <button class="nav" data-section="tracker">🎯 Placement Tracker</button>
+      <button class="nav" data-section="notes">📝 Notes</button>
+    </aside>
+
+    <main class="content">
+      <section id="dashboard" class="section active">
+        <div class="hero">
+          <div>
+            <p class="eyebrow">YOUR PLACEMENT JOURNEY</p>
+            <h1>Code daily. Crack interviews. Get placed. 🎯</h1>
+            <p>Practice DSA, track your progress and prepare smarter for coding interviews.</p>
+            <button class="primary" onclick="showSection('practice')">Start Practicing →</button>
+          </div>
+          <div class="hero-icon">💻</div>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><span>Questions Solved</span><strong id="solvedCount">0</strong></div>
+          <div class="stat"><span>Current Streak</span><strong id="streak">1 🔥</strong></div>
+          <div class="stat"><span>Topics Completed</span><strong id="topicCount">0/8</strong></div>
+          <div class="stat"><span>Placement Readiness</span><strong id="readiness">0%</strong></div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h2>📈 Your Progress</h2>
+            <div class="progress"><div id="mainProgress"></div></div>
+            <p id="progressText">Start solving questions to build your progress.</p>
+          </div>
+          <div class="card">
+            <h2>🔥 Today's Goal</h2>
+            <p>Complete at least <b>3 coding questions</b> today.</p>
+            <div class="goal-row"><span id="todaySolved">0 / 3 solved</span><span>🏆</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="practice" class="section">
+        <div class="section-head">
+          <div><p class="eyebrow">CODING PRACTICE</p><h1>Practice Questions</h1></div>
+          <select id="difficultyFilter">
+            <option value="All">All Difficulty</option><option>Easy</option><option>Medium</option><option>Hard</option>
+          </select>
+        </div>
+        <div id="questionList" class="question-grid"></div>
+      </section>
+
+      <section id="topics" class="section">
+        <p class="eyebrow">LEARN DSA</p><h1>DSA Topics</h1>
+        <div id="topicList" class="topic-grid"></div>
+      </section>
+
+      <section id="tracker" class="section">
+        <p class="eyebrow">PLACEMENT PREPARATION</p><h1>Placement Tracker</h1>
+        <div class="card">
+          <h2>🎯 Preparation Checklist</h2>
+          <div id="checklist"></div>
+        </div>
+      </section>
+
+      <section id="notes" class="section">
+        <p class="eyebrow">YOUR NOTES</p><h1>DSA Notes</h1>
+        <div class="card">
+          <textarea id="notesBox" placeholder="Write your DSA shortcuts, mistakes, interview tips..."></textarea>
+          <button class="primary" onclick="saveNotes()">Save Notes</button>
+          <span id="savedMsg"></span>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
